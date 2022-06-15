@@ -1,8 +1,31 @@
 import os
 import unittest
+import tempfile
+import shutil
+from lxml import etree
+from .ops import increment_presentation_media_counter
+from .ops import OOXML_APP_REL_FILENAME
+from .ops import OOXML_CONTENT_TYPE_REL_FILENAME
+from .ops import OOXML_SLIDE_REL_REL_FILENAME
+from .ops import OOXML_SLIDE_REL_FILENAME
 from .presentation import Presentation
 #
 BASIC_PRES_FILENAME = os.path.join(os.path.dirname(__file__),'test-resources','basic-pres.pptx')
+ORIGINAL_UNZIP_PRES_DIRNAME = os.path(os.path.dirname(__file__),'test-resources','no-audio-pres-unzipped')
+EXPECTED_UNZIP_PRES_DIRNAME = os.path(os.path.dirname(__file__),'test-resources','with-audio-pres-unzipped')
+#
+class PptxOoxmlOpsTest (unittest.TestCase):
+    #
+    def setUp(self) -> None:
+        self.original_mutable_copy = tempfile.TemporaryDirectory()
+        self.doCleanups(self.original_mutable_copy.cleanup)
+        shutil.copytree(ORIGINAL_UNZIP_PRES_DIRNAME,self.original_mutable_copy.name)
+        self.original_pres_unzip_dirname = self.original_mutable_copy.name
+    #
+    def test_increment_presentation_media_counter (self):
+        increment_presentation_media_counter (self.original_pres_unzip_dirname)
+        
+        
 #
 class ZipFileHandlingTest (unittest.TestCase):
     #
@@ -17,11 +40,6 @@ class ZipFileHandlingTest (unittest.TestCase):
         with open(BASIC_PRES_FILENAME,'rb') as fp:
             subsequent_content = fp.read()
         self.assertEqual(original_content,subsequent_content)
-    #
-#
-class PptxOoxmlOpsTest (unittest.TestCase):
-    #
-    ...
 #
 class SlideAudioInsertionTest (unittest.TestCase):
     #

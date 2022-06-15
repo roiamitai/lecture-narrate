@@ -1,0 +1,39 @@
+<p:pic xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <p:nvPicPr>
+    <p:cNvPr id="4" name="slide-01" descr="slide-01">
+      <a:hlinkClick r:id="" action="ppaction://media"/>
+      <a:extLst>
+        <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+          <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{AA67475F-45BA-852E-D0DA-1C9F0A16E42E}"/>
+        </a:ext>
+      </a:extLst>
+    </p:cNvPr>
+    <p:cNvPicPr>
+      <a:picLocks noChangeAspect="1"/>
+    </p:cNvPicPr>
+    <p:nvPr>
+      <a:audioFile r:link="roiAmitaiRId1"/>
+      <p:extLst>
+        <p:ext uri="{DAA4B4D4-6D71-4841-9C94-3DE7FCFB9230}">
+          <p14:media xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" r:embed="roiAmitaiRId2"/>
+        </p:ext>
+      </p:extLst>
+    </p:nvPr>
+  </p:nvPicPr>
+  <p:blipFill>
+    <a:blip r:embed="roiAmitaiRId3"/>
+    <a:stretch>
+      <a:fillRect/>
+    </a:stretch>
+  </p:blipFill>
+  <p:spPr>
+    <a:xfrm>
+      <a:off x="1588" y="1588"/>
+      <a:ext cx="812800" cy="812800"/>
+    </a:xfrm>
+    <a:prstGeom prst="rect">
+      <a:avLst/>
+    </a:prstGeom>
+  </p:spPr>
+</p:pic>
+      

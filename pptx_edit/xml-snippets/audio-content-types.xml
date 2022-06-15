@@ -1,0 +1,5 @@
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default Extension="mp3" ContentType="audio/mpeg"/>
+  <Default Extension="png" ContentType="image/png"/>
+</Types>
+  
